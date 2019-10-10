@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <title>Vue.jsチュートリアル</title>
+</head>
+<body>
+  <div id="app">
+    {{message}}
+  </div>
+
+  <div id="app-2">
+    <!-- v-bind属性：ディレクティブ(v-接頭辞のもの) 描画されたDOMに特定のリアクティブな振る舞いを与える -->
+    <!-- コードの意味↓ この要素のtitle属性をVueインスタンスのmessageプロパティによって更新して保存する -->
+    <span v-bind:title="message">
+      Hover your mouse over me for a few seconds
+      to see my dynamically bound title!
+    </span>
+  </div>
+
+  <script src="index.js"></script>
+</body>
+</html>
