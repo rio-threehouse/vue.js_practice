@@ -48,6 +48,16 @@
     <input v-bind:value="message2">
   </div>
 
+  <div id="app-7">
+    <ol>
+      <todo-item
+        v-for = "item in groceryList"
+        v-bind:todo = "item"
+        v-bind:key = "item.id"></todo-item>
+    </ol>
+  </div>
+    
+
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   <script src="index.js"></script>
 </body>
