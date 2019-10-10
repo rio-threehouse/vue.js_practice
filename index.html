@@ -33,7 +33,21 @@
       </li>
     </ol>
   </div>
-  
+
+  <div id="app-5">
+    <p>{{message}}</p>
+    <button v-on:click="reverseMessage">Reverse Message</button>
+  </div>
+
+  <div id="app-6">
+    <p>{{message1}}</p>
+    <!-- 双方向バインディング message1 ←→ バインドされるhtml要素 フォームに入力すると、バインドデータも変わる -->
+    <input v-model="message1">
+    <p>{{message2}}</p>
+    <!-- 単方向バインディング message2 → バインドされるhtml要素 フォームに入力しても、バインドデータは変わらない -->
+    <input v-bind:value="message2">
+  </div>
+
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   <script src="index.js"></script>
 </body>

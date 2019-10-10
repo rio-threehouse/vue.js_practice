@@ -33,3 +33,23 @@ var app4 = new Vue ({
   }
 })
 // app4.todos.push({ text: 'New item'}) コンソールでリストにデータを追加できる
+
+var app5 = new Vue ({
+  el: '#app-5',
+  data: {
+    message: 'Hello Vue.js!'
+  },
+  methods: {
+    reverseMessage: function () {
+      this.message = this.message.split('').reverse().join('')
+    }
+  }
+})
+
+var app6 = new Vue ({
+  el: '#app-6',
+  data: {
+    message1: 'v-modelメッセージ',
+    message2: 'v-bindメッセージ'
+  }
+})
