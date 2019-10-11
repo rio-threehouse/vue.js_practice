@@ -19,7 +19,8 @@ var todoStorage = {
 const app = new Vue({
   el: '#app',
   data: {
-    // 使用するデータ アプリで使用したいデータはdataオプションへ登録していく
+    // todoリストデータ用の配列初期値
+    todos: []
   },
   methods: {
     // 使用するメソッド
