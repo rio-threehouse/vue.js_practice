@@ -15,11 +15,6 @@ var todoStorage = {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(todos))
   }
 }
-// 実際にストレージに保存されるデータフォーマットはJSON
-// [
-//   { "id": 1, "comment": "新しいToDo1", "state": 0 },
-//   { "id": 2, "comment": "新しいToDo2", "state": 0 }
-// ]
 
 const app = new Vue({
   el: '#app',
