@@ -35,6 +35,13 @@
       </tbody>
     </table>
     <!-- 新規作成フォーム -->
+    <h2>新しい作業の追加</h2>
+    <!-- submitした時にdoAddメソッドが実行される(イベント修飾子.preventにより、リロードせずsubmitする) -->
+    <form class="add-form" v-on:submit.prevent="doAdd">
+      <!-- ref属性でinputに直接アクセスできるようにする -->
+      コメント <input type="text" ref="comment">
+      <button type="submit">追加</button>
+    </form>
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
