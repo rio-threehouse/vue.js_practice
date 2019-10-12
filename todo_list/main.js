@@ -28,16 +28,24 @@ new Vue({
       if (!comment.value.length) {
         return
       }
-
       // id,コメント内容,作業状態をtodosリストへpush
       this.todos.push({
         id: todoStorage.uid++,
         comment: comment.value,
         state: 0
       })
-
       // フォームを空にする
       comment.value = ''
+    },
+    doChangeState: function(item) {
+      // 状態変更の処理
+      item.state = item.state ? 0 : 1
+    },
+    doRemove: function(item) {
+      // indexOf: 文字列検索
+      var delete_item_index = this.todos.indexOf(item)
+      // splice: 要素の削除 
+      this.todos.splice(delete_item_index, 1)
     }
   },
   watch: {
