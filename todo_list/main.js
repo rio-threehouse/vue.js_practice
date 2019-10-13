@@ -18,7 +18,24 @@ new Vue({
   el: '#app',
   data: {
     // todoリストデータ用の配列初期値
-    todos: []
+    todos: [],
+    // 選択しているoptionsのvalurを記憶するためのデータ
+    options: [
+      { value: -1, label: '全て'},
+      { value: 0, label: '作業中'},
+      { value: 1, label: '完了'}
+    ],
+    // 初期値は「全て」
+    current: -1
+  },
+  computed: {
+    conputedTodos: function() {
+      return this.todos.filter(function(el) {
+        // データcurrentが-1なら全て(true)
+        // それ以外ならcurrentとstateが一致するものだけに絞り込む
+        return this.current < 0 ? true : this.current === el.state
+      },this)
+    }
   },
   methods: {
     doAdd: function(event, value) {
