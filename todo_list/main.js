@@ -30,11 +30,19 @@ new Vue({
   },
   computed: {
     conputedTodos: function() {
+      // filter: 配列の要素抽出
       return this.todos.filter(function(el) {
         // データcurrentが-1なら全て(true)
         // それ以外ならcurrentとstateが一致するものだけに絞り込む
         return this.current < 0 ? true : this.current === el.state
       },this)
+    },
+    labels() {
+      return this.options.reduce(function(a, b) {
+        return Object.assign(a, { [b.value]: b.label })
+      }, {})
+      // キーから見つけやすいように、次のように加工したデータを作成
+      // {0: '作業中', 1: '完了', -1: 'すべて'}
     }
   },
   methods: {
